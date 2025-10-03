@@ -50,6 +50,10 @@ class SuperadminPanelProvider extends PanelProvider
                 'info' => Color::Indigo,
             ])
 
+            #Custom Functions
+            ->resourceCreatePageRedirect('index')
+            ->resourceEditPageRedirect('index')
+
             ->discoverResources(in: app_path('Filament/Superadmin/Resources'), for: 'App\Filament\Superadmin\Resources')
             ->discoverPages(in: app_path('Filament/Superadmin/Pages'), for: 'App\Filament\Superadmin\Pages')
             ->pages([
