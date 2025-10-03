@@ -12,6 +12,7 @@ class StartupsForm
         return $schema->schema([
             Forms\Components\TextInput::make('startup_name')
                 ->label('Startup Name')
+                ->Unique()
                 ->required()
                 ->maxLength(255)
                 ->placeholder('Enter the startup name'),

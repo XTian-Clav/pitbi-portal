@@ -17,6 +17,7 @@ class StartupsTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->recordUrl(null)
             ->defaultSort('startup_name', 'asc') // ASC default
             ->columns([
                 // 1. Startup Name Column
@@ -56,8 +57,8 @@ class StartupsTable
                     ]),
             ])
             ->recordActions([
-                ViewAction::make(),
-                EditAction::make(),
+                ViewAction::make()->color('info'),
+                EditAction::make()->color('warning'),
                 DeleteAction::make(),
             ])
             ->toolbarActions([
